@@ -314,6 +314,74 @@
         .timeline-item:nth-child(odd) {
             margin-left: auto;
         }
+        .travel-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .travel-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .travel-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .travel-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .travel-info {
+            padding: 1.5rem;
+        }
+
+        .travel-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .youtube-section {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .youtube-section h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #FF0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .youtube-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+        }
 
         .contact-grid {
             display: grid;
@@ -404,6 +472,9 @@
             .timeline-item:nth-child(odd) {
                 margin-left: 2rem;
             }
+             .travel-gallery {
+                grid-template-columns: 1fr;
+            }
         }
 
         .scroll-indicator {
@@ -461,6 +532,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+             <li><a href="#travel">Travel</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -501,6 +573,9 @@
                 </p>
                 <p>
                     I'm a firm believer in collaborative development and have actively participated in hackathons and team projects. My technical skills span across React.js, Django, Express.js, and various databases, but what I value most is my ability to learn quickly and adapt to new technologies. I'm always excited to tackle challenging problems and deliver solutions that exceed expectations.
+                </p>
+                 <p>
+                    Beyond coding, I'm a travel enthusiast who loves exploring new places and cultures. I believe that traveling broadens perspectives and fuels creativity, which I bring back to my work as a developer. I'm a firm believer in collaborative development and have actively participated in hackathons and team projects. I'm always excited to tackle challenging problems and deliver solutions that exceed expectations.
                 </p>
             </div>
         </div>
@@ -579,6 +654,9 @@
                             <span class="tech-tag">GPT API</span>
                             <span class="tech-tag">In Progress</span>
                         </div>
+                        <div class="project-links">
+                            <a href="https://fascinating-clafoutis-133be5.netlify.app/" target="_blank" class="project-link">🚀 Live Demo</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
@@ -593,6 +671,9 @@
                             <span class="tech-tag">RESTful API</span>
                             <span class="tech-tag">In Progress</span>
                         </div>
+                         <div class="project-links">
+                            <a href="https://bright-melomakarona-40aacf.netlify.app/" target="_blank" class="project-link">🚀 Live Demo</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
@@ -605,6 +686,22 @@
                             <span class="tech-tag">C++</span>
                             <span class="tech-tag">iGraphics</span>
                             <span class="tech-tag">Game Dev</span>
+                        </div>
+                    </div>
+                </div>
+                    <div class="project-card">
+                    <div class="project-header">
+                        <h3>💼 CareerStudio</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>A comprehensive career development platform helping users build their professional journey. Features modern UI and collaborative tools for career planning.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Frontend</span>
+                            <span class="tech-tag">Career Development</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mrtaz77/career-studio-frontend" target="_blank" class="project-link">📂 GitHub Repo</a>
                         </div>
                     </div>
                 </div>
@@ -624,6 +721,45 @@
             </div>
         </div>
     </section>
+
+        <section id="travel">
+        <div class="container">
+            <h2 class="section-title">Travel Adventures 🌍</h2>
+            <div class="travel-gallery">
+                <div class="travel-card">
+                    <img src="https://github.com/Rahat463/Rahat463.github.io/blob/main/cox_1.jpg" alt="Travel Memory" class="travel-image">
+                    <div class="travel-info">
+                        <h3>Exploring New Horizons</h3>
+                        <p>Every journey teaches something new and inspires creativity in my work.</p>
+                    </div>
+                </div>
+                <div class="travel-card">
+                    <img src="https://github.com/Rahat463/Rahat463.github.io/blob/main/cox_2.jpg" alt="Travel Memory" class="travel-image">
+                    <div class="travel-info">
+                        <h3>Cultural Discoveries</h3>
+                        <p>Immersing in different cultures and perspectives around the world.</p>
+                    </div>
+                </div>
+                <div class="travel-card">
+                    <img src="https://github.com/Rahat463/Rahat463.github.io/blob/main/tanguar_haor_1.jpg" alt="Travel Memory" class="travel-image">
+                    <div class="travel-info">
+                        <h3>Nature's Beauty</h3>
+                        <p>Finding inspiration in the wonders of nature and scenic landscapes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="youtube-section">
+                <h3>🎥 Follow My Travel Journey</h3>
+                <p style="color: #666; margin-bottom: 1rem;">Subscribe to my YouTube channel for travel vlogs, adventures, and more!</p>
+                <a href="https://www.youtube.com/@SheikhRahatMahmud-r2u" target="_blank" class="youtube-btn">
+                    <span>▶️</span> Watch on YouTube
+                </a>
+            </div>
+        </div>
+    </section>
+
+
 
     <section id="experience">
         <div class="container">
@@ -657,10 +793,10 @@
                     <h3>Email</h3>
                     <a href="mailto:2005048@ugrad.cse.buet.ac.bd">2005048@ugrad.cse.buet.ac.bd</a>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📱</div>
-                    <h3>Phone</h3>
-                    <a href="tel:+8801704595394">+880 1704 595394</a>
+               <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/8801518732192" target="_blank">Chat on WhatsApp</a>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">⚡</div>
