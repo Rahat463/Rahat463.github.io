@@ -475,6 +475,10 @@
              .travel-gallery {
                 grid-template-columns: 1fr;
             }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .scroll-indicator {
@@ -521,6 +525,76 @@
         .social-link:hover {
             transform: scale(1.2) rotate(360deg);
         }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .certificate-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .cert-role {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .cert-link {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .cert-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .cert-card-image {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .cert-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .cert-info {
+            padding: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -532,8 +606,10 @@
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
              <li><a href="#travel">Travel</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -550,6 +626,7 @@
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="#projects" class="btn btn-outline">View Projects</a>
+                <a href="Rahat_cv.pdf" download class="btn btn-outline">Download CV</a>
             </div>
             <div class="social-links">
                 <a href="https://github.com/Rahat463" target="_blank" class="social-link">⚡</a>
@@ -567,16 +644,16 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <p>
-                    I'm an aspiring software engineer currently in my final year at Bangladesh University of Engineering & Technology (BUET), one of the most prestigious engineering institutions in Bangladesh. My journey in computer science has been driven by a passion for creating innovative solutions that make a real difference.
+                    I'm a final-year Computer Science & Engineering student at Bangladesh University of Engineering & Technology (BUET), expected to graduate in June 2026. My journey in computer science has been driven by a passion for creating innovative solutions — from full-stack web applications to deep learning research.
                 </p>
                 <p>
-                    With hands-on experience in both frontend and backend development, I've worked on diverse projects ranging from social media platforms to AI-driven applications. My internship at Academic & Admission Pathshala allowed me to contribute to an educational platform, where I focused on enhancing user experience and implementing performance optimizations.
+                    I currently work as a Software Development Intern at CalcHVAC (New York, Remote), building full-stack solutions with Python, JavaScript, and Three.js. I'm also an active Open Source Developer, contributing to React Native mobile and Electron desktop applications with offline-first architecture using WatermelonDB.
                 </p>
                 <p>
-                    I'm a firm believer in collaborative development and have actively participated in hackathons and team projects. My technical skills span across React.js, Django, Express.js, and various databases, but what I value most is my ability to learn quickly and adapt to new technologies. I'm always excited to tackle challenging problems and deliver solutions that exceed expectations.
+                    My research focuses on deep learning for medical imaging — my thesis involves auto-annotation of 3D QCT images under the supervision of Dr. Mahmuda Naznin at BUET. I'm also working on knowledge distillation of transformer models for biological sequence classification.
                 </p>
-                 <p>
-                    Beyond coding, I'm a travel enthusiast who loves exploring new places and cultures. I believe that traveling broadens perspectives and fuels creativity, which I bring back to my work as a developer. I'm a firm believer in collaborative development and have actively participated in hackathons and team projects. I'm always excited to tackle challenging problems and deliver solutions that exceed expectations.
+                <p>
+                    I'm a firm believer in collaborative development and have actively participated in hackathons including CUET Datathon (Finalist), SOLVIO AI Hackathon, and IEEE VIP Cup. Beyond coding, I'm a travel enthusiast who loves exploring new places and cultures, bringing fresh perspectives back to my work as a developer.
                 </p>
             </div>
         </div>
@@ -587,38 +664,60 @@
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
+                    <h3>💻 Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">JavaScript/TypeScript</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-card">
                     <h3>🎨 Frontend Development</h3>
                     <div class="skill-tags">
                         <span class="tag">React.js</span>
-                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">React Native</span>
                         <span class="tag">Material UI</span>
-                        <span class="tag">JavaFX</span>
+                        <span class="tag">HTML/CSS</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3>⚙️ Backend Development</h3>
                     <div class="skill-tags">
+                        <span class="tag">FastAPI</span>
                         <span class="tag">Django</span>
                         <span class="tag">Express.js</span>
-                        <span class="tag">RESTful APIs</span>
-                        <span class="tag">Node.js</span>
+                        <span class="tag">REST APIs</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <h3>💾 Databases</h3>
                     <div class="skill-tags">
-                        <span class="tag">Oracle</span>
                         <span class="tag">PostgreSQL</span>
-                        <span class="tag">SQL</span>
+                        <span class="tag">Oracle</span>
+                        <span class="tag">MongoDB</span>
                     </div>
                 </div>
                 <div class="skill-card">
-                    <h3>💻 Programming Languages</h3>
+                    <h3>🛠️ DevOps & Tools</h3>
                     <div class="skill-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">C++</span>
-                        <span class="tag">JavaScript</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">VM Deployment</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>🧠 AI/ML & Deep Learning</h3>
+                    <div class="skill-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">CNN</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">YOLOv8/v11</span>
                     </div>
                 </div>
             </div>
@@ -695,11 +794,12 @@
                         <h3>💼 CareerStudio</h3>
                     </div>
                     <div class="project-body">
-                        <p>A comprehensive career development platform helping users build their professional journey. Features modern UI and collaborative tools for career planning.</p>
+                        <p>AI-powered CV and portfolio builder with automated content generation. Full-stack application with CI/CD pipeline and VM deployment.</p>
                         <div class="project-tech">
                             <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">Frontend</span>
-                            <span class="tech-tag">Career Development</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">VM Deployment</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/mrtaz77/career-studio-frontend" target="_blank" class="project-link">📂 GitHub Repo</a>
@@ -716,6 +816,57 @@
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">JavaFX</span>
                             <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research & Thesis</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🔬 Auto Annotation of 3D QCT Images</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Undergraduate thesis on automated 3D medical image annotation using deep learning models including 3D-UNet, Swin-UNet, and UNETR. Supervised by Dr. Mahmuda Naznin, Professor, CSE, BUET.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">3D-UNet</span>
+                            <span class="tech-tag">Swin-UNet</span>
+                            <span class="tech-tag">UNETR</span>
+                            <span class="tech-tag">Medical Imaging</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🧬 Knowledge Distillation for Sequence Classification</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Research on lightweight knowledge distillation of transformer models (DNABERT-2) for biological sequence classification. Reducing model complexity while maintaining classification accuracy.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">DNABERT-2</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">Knowledge Distillation</span>
+                            <span class="tech-tag">PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🎥 IEEE VIP Cup Participant</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Participated in the IEEE Video & Image Processing Cup, applying state-of-the-art computer vision models for video and image analysis tasks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">YOLOv11</span>
+                            <span class="tech-tag">TransNetV2</span>
+                            <span class="tech-tag">Computer Vision</span>
                         </div>
                     </div>
                 </div>
@@ -768,18 +919,64 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <h3 style="color: var(--primary);">🎓 BUET - Computer Science & Engineering</h3>
-                    <p style="color: #666; margin: 0.5rem 0;">Present - 4th Year</p>
+                    <p style="color: #666; margin: 0.5rem 0;">Final Year (L-4 T-2) | Expected June 2026 | CGPA: 3.11/4.00</p>
                     <p>Pursuing Bachelor of Science in Computer Science and Engineering at Bangladesh's premier engineering institution. Completed advanced courses in AI, Computer Networks, Operating Systems, Software Engineering, and more.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 style="color: var(--primary);">💼 Software Development Intern</h3>
-                    <p style="color: #666; margin: 0.5rem 0;">Academic & Admission Pathshala - EdTech</p>
-                    <p>Contributed to educational platform development focusing on UX and functionality. Improved frontend performance through optimization and collaborated with cross-functional teams following best practices.</p>
+                    <h3 style="color: var(--primary);">💼 Software Development Intern - CalcHVAC</h3>
+                    <p style="color: #666; margin: 0.5rem 0;">New York (Remote) | Present</p>
+                    <p>Building full-stack solutions using Python backend, JavaScript frontend, and Three.js for 3D visualization. Developing scalable web applications for HVAC calculation tools.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 style="color: var(--primary);">🏆 BUET CSE Hackathon 2023</h3>
-                    <p style="color: #666; margin: 0.5rem 0;">Participant</p>
-                    <p>Collaborated with a team to build innovative solutions under time constraints, demonstrating problem-solving skills and ability to work effectively in high-pressure environments.</p>
+                    <h3 style="color: var(--primary);">🌐 Open Source Developer</h3>
+                    <p style="color: #666; margin: 0.5rem 0;">Remote | Sept 2025 - Present</p>
+                    <p>Contributing to React Native mobile and Electron macOS desktop applications. Implemented WatermelonDB for offline-first data persistence architecture.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: var(--primary);">🛰️ Intern - Bangladesh Satellite Company Limited (BSCL)</h3>
+                    <p style="color: #666; margin: 0.5rem 0;">Dhaka | Nov 2025 - Dec 2025</p>
+                    <p>Developed Python automation scripts for database retrieval and data visualization as part of the "Festival of Youth 2025" government program.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: var(--primary);">💼 Software Development Intern</h3>
+                    <p style="color: #666; margin: 0.5rem 0;">Academic & Admission Pathshala - EdTech | Completed</p>
+                    <p>Contributed to educational platform development focusing on UX and functionality. Improved frontend performance through component refactoring and optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="section-light">
+        <div class="container">
+            <h2 class="section-title">Certificates & Achievements</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="cert-icon">🏆</div>
+                    <h3>CUET Datathon 2025</h3>
+                    <p class="cert-role">Finalist - Team Breakpoint</p>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">CUET CSE Fest 2025 - Data-driven challenge solving</p>
+                    <a href="Team_Breakpoint_Sheikh_Rahat_Mahmud.pdf" target="_blank" class="cert-link">View Certificate</a>
+                </div>
+                <div class="certificate-card">
+                    <div class="cert-icon">🤖</div>
+                    <h3>SOLVIO AI Hackathon 2025</h3>
+                    <p class="cert-role">Round 2 Qualifier - Team Horizon</p>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Sheba Platform AI Hackathon - Innovation in AI technology</p>
+                    <a href="SOLVIO_Phase2_Qualifier_Certificate_Team_660.pdf" target="_blank" class="cert-link">View Certificate</a>
+                </div>
+                <div class="certificate-card cert-card-image">
+                    <img src="bscl_internship_completion_certificate.jpg" alt="BSCL Internship Certificate" class="cert-image">
+                    <div class="cert-info">
+                        <h3>BSCL Internship Completion</h3>
+                        <p class="cert-role">Bangladesh Satellite Company Limited - Nov to Dec 2025</p>
+                    </div>
+                </div>
+                <div class="certificate-card cert-card-image">
+                    <img src="Sheikh_Rahat_Mahmud_CUET_AI_HACKATHON.png" alt="CUET AI Hackathon Certificate" class="cert-image">
+                    <div class="cert-info">
+                        <h3>AI-FICATION under TELEVERSE 1.0</h3>
+                        <p class="cert-role">CUET AI Hackathon - Dept. of ETE, CUET</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -814,7 +1011,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Sheikh Rahat Mahmud. Crafted with passion and code.</p>
+        <p>&copy; 2026 Sheikh Rahat Mahmud. Crafted with passion and code.</p>
         <p style="margin-top: 0.5rem; color: #888;">Shurawardy Hall, Palashi, BUET, Dhaka, Bangladesh</p>
     </footer>
 
@@ -856,9 +1053,9 @@
         // Typing effect
         const phrases = [
             'Full Stack Developer',
-            'Problem Solver',
-            'BUET CSE Student',
-            'Tech Enthusiast'
+            'AI/ML Researcher',
+            'Open Source Contributor',
+            'BUET CSE Final Year'
         ];
         let phraseIndex = 0;
         let charIndex = 0;
@@ -927,7 +1124,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.skill-card, .project-card, .timeline-item, .contact-card').forEach(el => {
+        document.querySelectorAll('.skill-card, .project-card, .timeline-item, .contact-card, .certificate-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
