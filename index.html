@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sheikh Rahat Mahmud</title>
-  <meta name="description" content="Sheikh Rahat Mahmud — computer science researcher working on deep learning for medical and scientific imaging. B.Sc. CSE, BUET. Applying to PhD programs starting 2027." />
+  <meta name="description" content="Sheikh Rahat Mahmud — computer science researcher working on deep learning for scientific imaging and AI for science. B.Sc. CSE, BUET. Applying to PhD programs starting 2027." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%230E6E66' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%230E6E66' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%230E6E66'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,8 +30,8 @@
       background: var(--paper);
       color: var(--ink);
       font-family: 'Source Sans 3', -apple-system, 'Segoe UI', sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.65;
+      font-size: 1.15rem;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -73,20 +73,14 @@
     }
 
     .portrait {
-      width: 132px;
-      height: 132px;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      object-position: 50% 30%;
       border-radius: 10px;
       flex-shrink: 0;
       position: relative;
       border: 1px solid var(--rule);
-      overflow: hidden;
-    }
-    .portrait img {
-      width: 300px;
-      height: auto;
-      margin-left: -76px;
-      margin-top: -36px;
-      display: block;
     }
 
     .masthead { position: relative; }
@@ -102,14 +96,14 @@
     .role {
       margin-top: 0.45rem;
       color: var(--muted);
-      font-size: 0.98rem;
+      font-size: 1.06rem;
       line-height: 1.5;
     }
 
     .id-links {
       margin-top: 0.8rem;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.82rem;
+      font-size: 0.92rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem 0;
@@ -123,7 +117,7 @@
     h2 {
       font-family: 'Fraunces', Georgia, serif;
       font-weight: 600;
-      font-size: 1.28rem;
+      font-size: 1.45rem;
       padding-bottom: 0.45rem;
       border-bottom: 1px solid var(--rule);
       margin-bottom: 1.1rem;
@@ -136,7 +130,7 @@
       background: var(--accent-soft);
       border-left: 3px solid var(--accent);
       border-radius: 0 6px 6px 0;
-      font-size: 0.98rem;
+      font-size: 1.08rem;
     }
 
     /* News */
@@ -145,12 +139,12 @@
       display: grid;
       grid-template-columns: 6.2rem 1fr;
       gap: 1rem;
-      padding: 0.38rem 0;
-      font-size: 0.98rem;
+      padding: 0.42rem 0;
+      font-size: 1.08rem;
     }
     .news time {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.88rem;
       color: var(--muted);
       padding-top: 0.15rem;
       white-space: nowrap;
@@ -160,13 +154,13 @@
     .entry { margin-bottom: 1.5rem; }
     .entry:last-child { margin-bottom: 0; }
     .entry h3 {
-      font-size: 1.03rem;
+      font-size: 1.15rem;
       font-weight: 600;
       line-height: 1.45;
     }
     .entry .meta {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.87rem;
       color: var(--muted);
       margin: 0.25rem 0 0.35rem;
     }
@@ -176,11 +170,11 @@
       padding: 0.05rem 0.45rem;
       border-radius: 3px;
     }
-    .entry p { font-size: 0.98rem; }
+    .entry p { font-size: 1.08rem; }
     .entry .links {
       margin-top: 0.3rem;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.82rem;
+      font-size: 0.92rem;
     }
     .entry .links a { margin-right: 0.9rem; }
 
@@ -192,14 +186,14 @@
       gap: 0.3rem 1.2rem;
       padding: 0.6rem 0;
       border-bottom: 1px solid var(--rule);
-      font-size: 0.98rem;
+      font-size: 1.08rem;
     }
     .rows li:last-child { border-bottom: none; }
     .rows .what strong { font-weight: 600; }
     .rows .what .detail { color: var(--muted); display: block; }
     .rows .when {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.87rem;
       color: var(--muted);
       white-space: nowrap;
       padding-top: 0.2rem;
@@ -211,7 +205,7 @@
       padding-top: 1.4rem;
       border-top: 1px solid var(--rule);
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 1.02rem;
     }
     footer p + p { margin-top: 0.4rem; }
 
@@ -249,11 +243,11 @@
         </g>
       </svg>
 
-      <div class="portrait"><img src="Rahat_photo.jpg" alt="Portrait of Sheikh Rahat Mahmud" /></div>
+      <img class="portrait" src="Rahat_formal.jpg" alt="Portrait of Sheikh Rahat Mahmud" />
       <div class="masthead">
         <h1>Sheikh Rahat Mahmud</h1>
         <p class="role">B.Sc. in Computer Science &amp; Engineering, BUET (2026)<br />
-          Deep learning for medical &amp; scientific imaging</p>
+          Deep learning for scientific imaging &amp; AI for science</p>
         <nav class="id-links" aria-label="Profile links">
           <a href="mailto:sheikhrahatm@gmail.com">email</a><span class="sep">·</span>
           <a href="Sheikh_Rahat_Mahmud_CV.pdf">cv</a><span class="sep">·</span>
@@ -268,8 +262,8 @@
       <p>
         I am a computer science graduate of the Bangladesh University of Engineering &amp;
         Technology (BUET), where I wrote my thesis on transformer-based segmentation of
-        3D medical scans under <a href="https://cse.buet.ac.bd/faculty_list/detail/mahmudanaznin">Dr.&nbsp;Mahmuda Naznin</a>.
-        My research interest is deep learning for scientific and medical imaging:
+        3D volumetric scans under Dr.&nbsp;Mahmuda Naznin.
+        My research interest is deep learning for scientific imaging and data:
         segmenting rare, spatially structured targets in large volumetric data, making
         models efficient enough to deploy (knowledge distillation), and quantifying the
         uncertainty of what they find.
@@ -284,7 +278,7 @@
       </p>
       <p class="seeking">
         <strong>I am applying to PhD programs in AI/ML starting in 2027</strong> — particularly
-        at the intersection of deep learning and the sciences (medical imaging, geoscience,
+        at the intersection of deep learning and the sciences (geoscience, scientific imaging,
         computational biology). <a href="mailto:sheikhrahatm@gmail.com">Get in touch</a>.
       </p>
     </section>
