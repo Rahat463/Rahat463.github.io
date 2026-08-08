@@ -1,413 +1,656 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sheikh Rahat Mahmud</title>
-  <meta name="description" content="Sheikh Rahat Mahmud — computer science researcher working on deep learning, AI/ML systems, and software engineering. B.Sc. CSE, BUET. Applying to PhD programs starting 2027." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%230E6E66' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%230E6E66' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%230E6E66'/%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --paper: #FAFAF7;
-      --ink: #1C2431;
-      --muted: #59636F;
-      --accent: #0E6E66;
-      --accent-soft: #E7F1EF;
-      --rule: #E4E6E1;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'Source Sans 3', -apple-system, 'Segoe UI', sans-serif;
-      font-size: 1.15rem;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      max-width: 46rem;
-      margin: 0 auto;
-      padding: 0 1.4rem 4rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s;
-    }
-    a:hover { border-bottom-color: var(--accent); }
-    a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
-
-    /* ---------- Header ---------- */
-    header {
-      position: relative;
-      padding: 3.4rem 0 2.2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.8rem;
-    }
-
-    .contours {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .portrait {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      object-position: 50% 30%;
-      border-radius: 10px;
-      flex-shrink: 0;
-      position: relative;
-      border: 1px solid var(--rule);
-    }
-
-    .masthead { position: relative; }
-
-    h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
-      font-size: 2.35rem;
-      letter-spacing: -0.01em;
-      line-height: 1.15;
-    }
-
-    .role {
-      margin-top: 0.45rem;
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.5;
-    }
-
-    .id-links {
-      margin-top: 0.8rem;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.92rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem 0;
-    }
-    .id-links a { padding: 0 0.15rem; }
-    .id-links .sep { color: var(--rule); margin: 0 0.4rem; }
-
-    /* ---------- Sections ---------- */
-    section { margin-top: 2.6rem; }
-
-    h2 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
-      font-size: 1.45rem;
-      padding-bottom: 0.45rem;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 1.1rem;
-    }
-
-    .bio p + p { margin-top: 0.8rem; }
-    .bio .seeking {
-      margin-top: 1rem;
-      padding: 0.65rem 0.9rem;
-      background: var(--accent-soft);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 6px 6px 0;
-      font-size: 1.08rem;
-    }
-
-    /* News */
-    .news { list-style: none; }
-    .news li {
-      display: grid;
-      grid-template-columns: 6.2rem 1fr;
-      gap: 1rem;
-      padding: 0.42rem 0;
-      font-size: 1.08rem;
-    }
-    .news time {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding-top: 0.15rem;
-      white-space: nowrap;
-    }
-
-    /* Research entries */
-    .entry { margin-bottom: 1.5rem; }
-    .entry:last-child { margin-bottom: 0; }
-    .entry h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      line-height: 1.45;
-    }
-    .entry .meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.87rem;
-      color: var(--muted);
-      margin: 0.25rem 0 0.35rem;
-    }
-    .entry .meta .status {
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 0.05rem 0.45rem;
-      border-radius: 3px;
-    }
-    .entry p { font-size: 1.08rem; }
-    .entry .links {
-      margin-top: 0.3rem;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.92rem;
-    }
-    .entry .links a { margin-right: 0.9rem; }
-
-    /* Experience / awards rows */
-    .rows { list-style: none; }
-    .rows li {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 0.3rem 1.2rem;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 1.08rem;
-    }
-    .rows li:last-child { border-bottom: none; }
-    .rows .what strong { font-weight: 600; }
-    .rows .what .detail { color: var(--muted); display: block; }
-    .rows .when {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.87rem;
-      color: var(--muted);
-      white-space: nowrap;
-      padding-top: 0.2rem;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 3.2rem;
-      padding-top: 1.4rem;
-      border-top: 1px solid var(--rule);
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-    footer p + p { margin-top: 0.4rem; }
-
-    @media (max-width: 620px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.2rem;
-        padding-top: 2.4rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sheikh Rahat Mahmud</title>
+    <meta
+      name="description"
+      content="Sheikh Rahat Mahmud — computer science researcher working on deep learning, AI/ML systems, and software engineering. B.Sc. CSE, BUET. Applying to PhD programs starting 2027."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%230E6E66' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%230E6E66' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%230E6E66'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #fafaf7;
+        --ink: #1c2431;
+        --muted: #59636f;
+        --accent: #0e6e66;
+        --accent-soft: #e7f1ef;
+        --rule: #e4e6e1;
       }
-      h1 { font-size: 1.9rem; }
-      .news li { grid-template-columns: 5.2rem 1fr; gap: 0.7rem; }
-      .rows li { grid-template-columns: 1fr; }
-      .rows .when { padding-top: 0; }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
 
-    <header>
-      <svg class="contours" aria-hidden="true" viewBox="0 0 740 210" preserveAspectRatio="xMaxYMid slice" fill="none">
-        <g stroke="#0E6E66" stroke-opacity="0.10" stroke-width="1.1">
-          <path d="M470 178 C 500 128, 585 120, 620 142 C 660 167, 700 160, 745 138" />
-          <path d="M488 190 C 515 140, 590 134, 630 156 C 668 178, 706 172, 748 152" />
-          <path d="M540 30 C 575 12, 640 14, 672 36 C 700 55, 730 52, 750 40" />
-          <path d="M528 44 C 568 22, 646 26, 682 50 C 706 66, 734 64, 752 54" />
-          <path d="M516 60 C 560 34, 652 40, 692 66 C 712 78, 738 76, 754 68" />
-          <path d="M610 108 C 632 92, 676 92, 700 106 C 718 116, 740 114, 756 106" />
-          <path d="M598 122 C 626 102, 684 104, 710 120 C 726 130, 744 128, 758 120" />
-        </g>
-        <g stroke="#0E6E66" stroke-opacity="0.16" stroke-width="1.1">
-          <ellipse cx="668" cy="79" rx="26" ry="11" transform="rotate(-14 668 79)" />
-          <ellipse cx="668" cy="79" rx="14" ry="5.5" transform="rotate(-14 668 79)" />
-        </g>
-      </svg>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-      <img class="portrait" src="Rahat_formal.jpg" alt="Portrait of Sheikh Rahat Mahmud" />
-      <div class="masthead">
-        <h1>Sheikh Rahat Mahmud</h1>
-        <p class="role">B.Sc. in Computer Science &amp; Engineering, BUET (2026)<br />
-          Deep learning · AI/ML systems · software engineering</p>
-        <nav class="id-links" aria-label="Profile links">
-          <a href="mailto:sheikhrahatm@gmail.com">email</a><span class="sep">·</span>
-          <a href="Sheikh_Rahat_Mahmud_CV.pdf">cv</a><span class="sep">·</span>
-          <a href="https://github.com/Rahat463" rel="me">github</a><span class="sep">·</span>
-          <a href="https://www.linkedin.com/in/sheikh-rahat-mahmud-567163294" rel="me">linkedin</a><span class="sep">·</span>
-          <a href="https://www.kaggle.com/sheikhrahatmahmud" rel="me">kaggle</a>
-        </nav>
-      </div>
-    </header>
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
 
-    <section class="bio" aria-label="About">
-      <p>
-        I am a computer science graduate of the Bangladesh University of Engineering &amp;
-        Technology (BUET), where I wrote my thesis on transformer-based segmentation of
-        3D volumetric scans under Dr.&nbsp;Mahmuda Naznin.
-        My research interests span deep learning, AI/ML systems, and software engineering:
-        segmenting rare, spatially structured targets in large volumetric data, making
-        models efficient enough to deploy (knowledge distillation), quantifying the
-        uncertainty of what they find, and building reliable, reproducible ML systems.
-      </p>
-      <p>
-        I am currently a research intern in the <a href="https://uiuc-srse.github.io/">UIUC++ Summer Research School (SRSE 2026)</a>,
-        working with Prof.&nbsp;Darko Marinov (UIUC) and Prof.&nbsp;Wenxi Wang (UVA) on AI and
-        software engineering research. Alongside research, I work part-time as a software
-        engineer at <a href="https://calchvac.com/">CalcHVAC</a> (New York, remote), building
-        LLM-agent tooling and 3D building-energy simulation features — so I care about
-        models that survive contact with production.
-      </p>
-      <p class="seeking">
-        <strong>I am applying to PhD programs in AI/ML starting in 2027</strong> — particularly
-        at the intersection of deep learning and the sciences (geoscience, scientific imaging,
-        computational biology). <a href="mailto:sheikhrahatm@gmail.com">Get in touch</a>.
-      </p>
-    </section>
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          'Source Sans 3',
+          -apple-system,
+          'Segoe UI',
+          sans-serif;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    <section aria-label="News">
-      <h2>News</h2>
-      <ul class="news">
-        <li><time>Aug 2026</time><span>Applying to PhD programs for the 2027 intake.</span></li>
-        <li><time>Jun 2026</time><span>Selected as a research intern for <a href="https://uiuc-srse.github.io/">UIUC++ SRSE 2026</a> with Prof. Darko Marinov (UIUC) and Prof. Wenxi Wang (UVA).</span></li>
-        <li><time>Jun 2026</time><span>Graduated from BUET; defended my undergraduate thesis on bilateral full-femur segmentation from clinical QCT.</span></li>
-        <li><time>Apr 2026</time><span>Released a <a href="https://doi.org/10.13140/RG.2.2.15997.52963">public preprint</a> on knowledge distillation of DNABERT-2.</span></li>
-        <li><time>Jan 2026</time><span>Joined <a href="https://calchvac.com/">CalcHVAC</a> as a part-time software development engineer.</span></li>
-        <li><time>Jul 2025</time><span>Competed in the IEEE Video &amp; Image Processing (VIP) Cup on shot-boundary detection.</span></li>
-      </ul>
-    </section>
+      .page {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 0 1.4rem 4rem;
+      }
 
-    <section aria-label="Research">
-      <h2>Research</h2>
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.15s;
+      }
+      a:hover {
+        border-bottom-color: var(--accent);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
 
-      <div class="entry">
-        <h3>Automated Bilateral Full-Femur Segmentation and Morphometric Analysis from
-          Multi-Resolution Clinical QCT Using Transfer Learning and a Transformer Network</h3>
-        <p class="meta"><span class="status">manuscript in preparation</span> · B.Sc. thesis, BUET · supervised by Dr. Mahmuda Naznin · defended Jun 2026</p>
+      /* ---------- Header ---------- */
+      header {
+        position: relative;
+        padding: 3.4rem 0 2.2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+      }
+
+      .contours {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .portrait {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        object-position: 50% 30%;
+        border-radius: 10px;
+        flex-shrink: 0;
+        position: relative;
+        border: 1px solid var(--rule);
+      }
+
+      .masthead {
+        position: relative;
+      }
+
+      h1 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-weight: 600;
+        font-size: 2.35rem;
+        letter-spacing: -0.01em;
+        line-height: 1.15;
+      }
+
+      .role {
+        margin-top: 0.45rem;
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.5;
+      }
+
+      .id-links {
+        margin-top: 0.8rem;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.92rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0;
+      }
+      .id-links a {
+        padding: 0 0.15rem;
+      }
+      .id-links .sep {
+        color: var(--rule);
+        margin: 0 0.4rem;
+      }
+
+      /* ---------- Sections ---------- */
+      section {
+        margin-top: 2.6rem;
+      }
+
+      h2 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-weight: 600;
+        font-size: 1.45rem;
+        padding-bottom: 0.45rem;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 1.1rem;
+      }
+
+      .bio p + p {
+        margin-top: 0.8rem;
+      }
+      .bio .seeking {
+        margin-top: 1rem;
+        padding: 0.65rem 0.9rem;
+        background: var(--accent-soft);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 6px 6px 0;
+        font-size: 1.08rem;
+      }
+
+      /* News */
+      .news {
+        list-style: none;
+      }
+      .news li {
+        display: grid;
+        grid-template-columns: 6.2rem 1fr;
+        gap: 1rem;
+        padding: 0.42rem 0;
+        font-size: 1.08rem;
+      }
+      .news time {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.88rem;
+        color: var(--muted);
+        padding-top: 0.15rem;
+        white-space: nowrap;
+      }
+
+      /* Research entries */
+      .entry {
+        margin-bottom: 1.5rem;
+      }
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+      .entry h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        line-height: 1.45;
+      }
+      .entry .meta {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.87rem;
+        color: var(--muted);
+        margin: 0.25rem 0 0.35rem;
+      }
+      .entry .meta .status {
+        color: var(--accent);
+        background: var(--accent-soft);
+        padding: 0.05rem 0.45rem;
+        border-radius: 3px;
+      }
+      .entry p {
+        font-size: 1.08rem;
+      }
+      .entry .links {
+        margin-top: 0.3rem;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.92rem;
+      }
+      .entry .links a {
+        margin-right: 0.9rem;
+      }
+
+      /* Experience / awards rows */
+      .rows {
+        list-style: none;
+      }
+      .rows li {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.3rem 1.2rem;
+        padding: 0.6rem 0;
+        border-bottom: 1px solid var(--rule);
+        font-size: 1.08rem;
+      }
+      .rows li:last-child {
+        border-bottom: none;
+      }
+      .rows .what strong {
+        font-weight: 600;
+      }
+      .rows .what .detail {
+        color: var(--muted);
+        display: block;
+      }
+      .rows .when {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.87rem;
+        color: var(--muted);
+        white-space: nowrap;
+        padding-top: 0.2rem;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 3.2rem;
+        padding-top: 1.4rem;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        font-size: 1.02rem;
+      }
+      footer p + p {
+        margin-top: 0.4rem;
+      }
+
+      @media (max-width: 620px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.2rem;
+          padding-top: 2.4rem;
+        }
+        h1 {
+          font-size: 1.9rem;
+        }
+        .news li {
+          grid-template-columns: 5.2rem 1fr;
+          gap: 0.7rem;
+        }
+        .rows li {
+          grid-template-columns: 1fr;
+        }
+        .rows .when {
+          padding-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <svg
+          class="contours"
+          aria-hidden="true"
+          viewBox="0 0 740 210"
+          preserveAspectRatio="xMaxYMid slice"
+          fill="none"
+        >
+          <g stroke="#0E6E66" stroke-opacity="0.10" stroke-width="1.1">
+            <path
+              d="M470 178 C 500 128, 585 120, 620 142 C 660 167, 700 160, 745 138"
+            />
+            <path
+              d="M488 190 C 515 140, 590 134, 630 156 C 668 178, 706 172, 748 152"
+            />
+            <path
+              d="M540 30 C 575 12, 640 14, 672 36 C 700 55, 730 52, 750 40"
+            />
+            <path
+              d="M528 44 C 568 22, 646 26, 682 50 C 706 66, 734 64, 752 54"
+            />
+            <path
+              d="M516 60 C 560 34, 652 40, 692 66 C 712 78, 738 76, 754 68"
+            />
+            <path
+              d="M610 108 C 632 92, 676 92, 700 106 C 718 116, 740 114, 756 106"
+            />
+            <path
+              d="M598 122 C 626 102, 684 104, 710 120 C 726 130, 744 128, 758 120"
+            />
+          </g>
+          <g stroke="#0E6E66" stroke-opacity="0.16" stroke-width="1.1">
+            <ellipse
+              cx="668"
+              cy="79"
+              rx="26"
+              ry="11"
+              transform="rotate(-14 668 79)"
+            />
+            <ellipse
+              cx="668"
+              cy="79"
+              rx="14"
+              ry="5.5"
+              transform="rotate(-14 668 79)"
+            />
+          </g>
+        </svg>
+
+        <img
+          class="portrait"
+          src="Rahat_formal.jpg"
+          alt="Portrait of Sheikh Rahat Mahmud"
+        />
+        <div class="masthead">
+          <h1>Sheikh Rahat Mahmud</h1>
+          <p class="role">
+            B.Sc. in Computer Science &amp; Engineering, BUET (2026)<br />
+            Deep learning · AI/ML systems · software engineering
+          </p>
+          <nav class="id-links" aria-label="Profile links">
+            <a href="mailto:sheikhrahatm@gmail.com">email</a
+            ><span class="sep">·</span>
+            <a href="Sheikh_Rahat_Mahmud_CV.pdf">cv</a
+            ><span class="sep">·</span>
+            <a href="https://github.com/Rahat463" rel="me">github</a
+            ><span class="sep">·</span>
+            <a
+              href="https://www.linkedin.com/in/sheikh-rahat-mahmud-567163294"
+              rel="me"
+              >linkedin</a
+            ><span class="sep">·</span>
+            <a href="https://www.kaggle.com/sheikhrahatmahmud" rel="me"
+              >kaggle</a
+            >
+          </nav>
+        </div>
+      </header>
+
+      <section class="bio" aria-label="About">
         <p>
-          Trained and compared four architectures (3D-UNet, UNet, Swin-UNet, UNETR) for 3D
-          femur segmentation on 22&nbsp;GB+ of clinical DICOM volumes, reaching 97%+ accuracy;
-          designed volumetric preprocessing, a Dice + cross-entropy objective for severe class
-          imbalance, and morphological postprocessing for memory-constrained, privacy-sensitive
-          medical data.
+          I am a computer science graduate of the Bangladesh University of
+          Engineering &amp; Technology (BUET), where I wrote my thesis on
+          transformer-based segmentation of full femur bone from 3D QCT image
+          under Dr.&nbsp;Mahmuda Naznin. My research interests span deep
+          learning, AI/ML systems, and software engineering: segmenting rare,
+          spatially structured targets in large volumetric data, making models
+          efficient enough to deploy (knowledge distillation), quantifying the
+          uncertainty of what they find, and building reliable, reproducible ML
+          systems.
         </p>
-      </div>
-
-      <div class="entry">
-        <h3>Lightweight Knowledge Distillation of DNABERT-2 for Biological Sequence Classification</h3>
-        <p class="meta"><span class="status">preprint</span> · independent research · Jan–Apr 2026</p>
         <p>
-          Compressed DNABERT-2 (117M parameters) into a 26M-parameter student retaining
-          93.3% accuracy against the 96.7% teacher, with a 4.5&times; inference speedup.
+          I am currently a research intern in the
+          <a href="https://uiuc-srse.github.io/"
+            >UIUC++ Summer Research School (SRSE 2026)</a
+          >, working with Prof.&nbsp;Darko Marinov (UIUC) and Prof.&nbsp;Wenxi
+          Wang (UVA) on AI and software engineering research. Alongside
+          research, I work part-time as a software engineer at
+          <a href="https://calchvac.com/">CalcHVAC</a> (New York, remote),
+          building LLM-agent tooling and 3D building-energy simulation features
+          — so I care about models that survive contact with production.
         </p>
-        <p class="links">
-          <a href="https://doi.org/10.13140/RG.2.2.15997.52963">[preprint]</a>
+        <p class="seeking">
+          <strong>I am interested in AI/ML </strong> — particularly at the
+          intersection of deep learning and the sciences (geoscience, software
+          Engineering, HCI ).
+          <a href="mailto:sheikhrahatm@gmail.com">Get in touch</a>.
         </p>
-      </div>
+      </section>
 
-      <div class="entry">
-        <h3>Shot-Boundary Detection for the IEEE Video &amp; Image Processing Cup</h3>
-        <p class="meta"><span class="status">competition</span> · IEEE VIP Cup · Jul 2025</p>
+      <section aria-label="News">
+        <h2>News</h2>
+        <ul class="news">
+          <li>
+            <time>Aug 2026</time
+            ><span>Applying to PhD programs for the 2027 intake.</span>
+          </li>
+          <li>
+            <time>Jun 2026</time
+            ><span
+              >Selected as a research intern for
+              <a href="https://uiuc-srse.github.io/">UIUC++ SRSE 2026</a> with
+              Prof. Darko Marinov (UIUC) and Prof. Wenxi Wang (UVA).</span
+            >
+          </li>
+          <li>
+            <time>Jun 2026</time
+            ><span
+              >Graduated from BUET; defended my undergraduate thesis on
+              bilateral full-femur segmentation from clinical QCT.</span
+            >
+          </li>
+          <li>
+            <time>Apr 2026</time
+            ><span
+              >Released a
+              <a href="https://doi.org/10.13140/RG.2.2.15997.52963"
+                >public preprint</a
+              >
+              on knowledge distillation of DNABERT-2.</span
+            >
+          </li>
+          <li>
+            <time>Jan 2026</time
+            ><span
+              >Joined <a href="https://calchvac.com/">CalcHVAC</a> as a
+              part-time software development engineer.</span
+            >
+          </li>
+          <li>
+            <time>Jul 2025</time
+            ><span
+              >Competed in the IEEE Video &amp; Image Processing (VIP) Cup on
+              shot-boundary detection.</span
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section aria-label="Research">
+        <h2>Research</h2>
+
+        <div class="entry">
+          <h3>
+            Automated Bilateral Full-Femur Segmentation and Morphometric
+            Analysis from Multi-Resolution Clinical QCT Using Transfer Learning
+            and a Transformer Network
+          </h3>
+          <p class="meta">
+            <span class="status">manuscript in preparation</span> · B.Sc.
+            thesis, BUET · supervised by Dr. Mahmuda Naznin · defended Jun 2026
+          </p>
+          <p>
+            Trained and compared four architectures (3D-UNet, UNet, Swin-UNet,
+            UNETR) for 3D femur segmentation on 22&nbsp;GB+ of clinical DICOM
+            volumes, reaching 97%+ accuracy; designed volumetric preprocessing,
+            a Dice + cross-entropy objective for severe class imbalance, and
+            morphological postprocessing for memory-constrained,
+            privacy-sensitive medical data.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3>
+            Lightweight Knowledge Distillation of DNABERT-2 for Biological
+            Sequence Classification
+          </h3>
+          <p class="meta">
+            <span class="status">preprint</span> · Machine Learning Project ·
+            Jan–Apr 2026
+          </p>
+          <p>
+            Compressed DNABERT-2 (117M parameters) into a 26M-parameter student
+            retaining 93.3% accuracy against the 96.7% teacher, with a
+            4.5&times; inference speedup.
+          </p>
+          <p class="links">
+            <a href="https://doi.org/10.13140/RG.2.2.15997.52963">[preprint]</a>
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3>
+            Shot-Boundary Detection for the IEEE Video &amp; Image Processing
+            Cup
+          </h3>
+          <p class="meta">
+            <span class="status">competition</span> · IEEE VIP Cup · Jul 2025
+          </p>
+          <p>
+            Evaluated YOLOv8/v11 and TransNetV2 on a 2&nbsp;GB+ video dataset,
+            improving shot-boundary detection from an 85% baseline to over 90%
+            accuracy.
+          </p>
+        </div>
+      </section>
+
+      <section aria-label="Experience">
+        <h2>Experience</h2>
+        <ul class="rows">
+          <li>
+            <span class="what"
+              ><strong>Research Intern, UIUC++ SRSE 2026</strong>
+              <span class="detail"
+                >AI &amp; software engineering research with Prof. Darko Marinov
+                (UIUC) and Prof. Wenxi Wang (UVA) · remote</span
+              ></span
+            >
+            <span class="when">Summer 2026</span>
+          </li>
+          <li>
+            <span class="what"
+              ><strong
+                >Software Development Engineer (part-time), CalcHVAC</strong
+              >
+              <span class="detail"
+                >LangChain chatbot on AWS Lambda;
+                gbXML&rarr;EnergyPlus/OpenStudio model generation;
+                Three.js/React 3D viewer · New York, remote</span
+              ></span
+            >
+            <span class="when">Jan 2026 – present</span>
+          </li>
+          <li>
+            <span class="what"
+              ><strong>Open-Source Developer, KhorchaPati</strong>
+              <span class="detail"
+                >LangChain.js ReAct agent with 14 typed tools over Claude &amp;
+                Gemini APIs; budget and recurring-expense services with 56+
+                tests</span
+              ></span
+            >
+            <span class="when">Sep 2025 – Jun 2026</span>
+          </li>
+          <li>
+            <span class="what"
+              ><strong
+                >Intern, Bangladesh Satellite Company Limited (BSCL)</strong
+              >
+              <span class="detail"
+                >Automated retrieval and reporting over 40,000+ records with
+                Python · Dhaka</span
+              ></span
+            >
+            <span class="when">Nov – Dec 2025</span>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-label="Selected projects">
+        <h2>Selected Projects</h2>
+        <ul class="rows">
+          <li>
+            <span class="what"
+              ><strong
+                ><a
+                  href="https://github.com/Rahat463/HealthFlow-Analytics-Dashboard"
+                  >HealthFlow Analytics Dashboard</a
+                ></strong
+              >
+              <span class="detail"
+                >ETL, statistical anomaly detection, and interactive dashboards
+                over Synthea synthetic EHR data · Python, SQL, Streamlit</span
+              ></span
+            >
+            <span class="when">2026</span>
+          </li>
+          <li>
+            <span class="what"
+              ><strong
+                ><a href="https://github.com/mrtaz77/career-studio-frontend"
+                  >Career Studio</a
+                ></strong
+              >
+              <span class="detail"
+                >AI-powered CV builder deployed on Azure with a full CI/CD
+                pipeline · React, FastAPI</span
+              ></span
+            >
+            <span class="when">2025</span>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-label="Awards">
+        <h2>Awards &amp; Activities</h2>
+        <ul class="rows">
+          <li>
+            <span class="what"
+              ><strong
+                >Selected, UIUC++ Summer Research School (SRSE)</strong
+              ></span
+            >
+            <span class="when">2026</span>
+          </li>
+          <li>
+            <span class="what"
+              ><strong>Finalist, CUET Datathon</strong>
+              <span class="detail"
+                >Team Breakpoint ·
+                <a href="Team_Breakpoint_Sheikh_Rahat_Mahmud.pdf"
+                  >certificate</a
+                ></span
+              ></span
+            >
+            <span class="when">2025</span>
+          </li>
+          <li>
+            <span class="what"
+              ><strong>Round-2 Qualifier, Solvio AI Hackathon</strong>
+              <span class="detail"
+                ><a href="SOLVIO_Phase2_Qualifier_Certificate_Team_660.pdf"
+                  >certificate</a
+                ></span
+              ></span
+            >
+            <span class="when">2025</span>
+          </li>
+          <li>
+            <span class="what"
+              ><strong
+                >Participant, CUET AI Hackathon (AI-FICATION, Televerse
+                1.0)</strong
+              >
+              <span class="detail"
+                ><a href="Sheikh_Rahat_Mahmud_CUET_AI_HACKATHON.png"
+                  >certificate</a
+                ></span
+              ></span
+            >
+            <span class="when">2025</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
         <p>
-          Evaluated YOLOv8/v11 and TransNetV2 on a 2&nbsp;GB+ video dataset, improving
-          shot-boundary detection from an 85% baseline to over 90% accuracy.
+          Away from the keyboard I travel around Bangladesh and vlog it on
+          <a href="https://www.youtube.com/@SheikhRahatMahmud-48">YouTube</a>.
         </p>
-      </div>
-    </section>
-
-    <section aria-label="Experience">
-      <h2>Experience</h2>
-      <ul class="rows">
-        <li>
-          <span class="what"><strong>Research Intern, UIUC++ SRSE 2026</strong>
-            <span class="detail">AI &amp; software engineering research with Prof. Darko Marinov (UIUC) and Prof. Wenxi Wang (UVA) · remote</span></span>
-          <span class="when">Summer 2026</span>
-        </li>
-        <li>
-          <span class="what"><strong>Software Development Engineer (part-time), CalcHVAC</strong>
-            <span class="detail">LangChain chatbot on AWS Lambda; gbXML&rarr;EnergyPlus/OpenStudio model generation; Three.js/React 3D viewer · New York, remote</span></span>
-          <span class="when">Jan 2026 – present</span>
-        </li>
-        <li>
-          <span class="what"><strong>Open-Source Developer, KhorchaPati</strong>
-            <span class="detail">LangChain.js ReAct agent with 14 typed tools over Claude &amp; Gemini APIs; budget and recurring-expense services with 56+ tests</span></span>
-          <span class="when">Sep 2025 – Jun 2026</span>
-        </li>
-        <li>
-          <span class="what"><strong>Intern, Bangladesh Satellite Company Limited (BSCL)</strong>
-            <span class="detail">Automated retrieval and reporting over 40,000+ records with Python · Dhaka</span></span>
-          <span class="when">Nov – Dec 2025</span>
-        </li>
-      </ul>
-    </section>
-
-    <section aria-label="Selected projects">
-      <h2>Selected Projects</h2>
-      <ul class="rows">
-        <li>
-          <span class="what"><strong><a href="https://github.com/Rahat463/HealthFlow-Analytics-Dashboard">HealthFlow Analytics Dashboard</a></strong>
-            <span class="detail">ETL, statistical anomaly detection, and interactive dashboards over Synthea synthetic EHR data · Python, SQL, Streamlit</span></span>
-          <span class="when">2026</span>
-        </li>
-        <li>
-          <span class="what"><strong><a href="https://github.com/mrtaz77/career-studio-frontend">Career Studio</a></strong>
-            <span class="detail">AI-powered CV builder deployed on Azure with a full CI/CD pipeline · React, FastAPI</span></span>
-          <span class="when">2025</span>
-        </li>
-      </ul>
-    </section>
-
-    <section aria-label="Awards">
-      <h2>Awards &amp; Activities</h2>
-      <ul class="rows">
-        <li>
-          <span class="what"><strong>Selected, UIUC++ Summer Research School (SRSE)</strong></span>
-          <span class="when">2026</span>
-        </li>
-        <li>
-          <span class="what"><strong>Finalist, CUET Datathon</strong>
-            <span class="detail">Team Breakpoint · <a href="Team_Breakpoint_Sheikh_Rahat_Mahmud.pdf">certificate</a></span></span>
-          <span class="when">2025</span>
-        </li>
-        <li>
-          <span class="what"><strong>Round-2 Qualifier, Solvio AI Hackathon</strong>
-            <span class="detail"><a href="SOLVIO_Phase2_Qualifier_Certificate_Team_660.pdf">certificate</a></span></span>
-          <span class="when">2025</span>
-        </li>
-        <li>
-          <span class="what"><strong>Participant, CUET AI Hackathon (AI-FICATION, Televerse 1.0)</strong>
-            <span class="detail"><a href="Sheikh_Rahat_Mahmud_CUET_AI_HACKATHON.png">certificate</a></span></span>
-          <span class="when">2025</span>
-        </li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>
-        Away from the keyboard I travel around Bangladesh and vlog it on
-        <a href="https://www.youtube.com/@SheikhRahatMahmud-48">YouTube</a>.
-      </p>
-      <p>&copy; 2026 Sheikh Rahat Mahmud · Dhaka, Bangladesh</p>
-    </footer>
-
-  </div>
-</body>
+        <p>&copy; 2026 Sheikh Rahat Mahmud · Dhaka, Bangladesh</p>
+      </footer>
+    </div>
+  </body>
 </html>
